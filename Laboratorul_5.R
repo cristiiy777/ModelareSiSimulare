@@ -126,3 +126,16 @@ acf(mcg_2)
 
 acf(randu_1)
 acf(randu_2)
+
+#__Exercitiul 7
+
+#7. Ce alte teste de a verifica caracterul random al secventelor puteti sa incercati? Cititi cursul pentru indicatii.
+
+chisq.test(lcg_1)
+chisq.test(lcg_2)
+
+chisq.test(mcg_1)
+chisq.test(mcg_2)
+
+chisq.test(randu_1)
+chisq.test(randu_2)
