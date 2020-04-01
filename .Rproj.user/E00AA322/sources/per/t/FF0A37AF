@@ -1,0 +1,26 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1585741328148.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "4032225571",
+    "id" : "FF0A37AF",
+    "lastKnownWriteTime" : 1585746825,
+    "last_content_update" : 1585746825897,
+    "path" : "C:/Users/Lenovo/Desktop/ProrameR/LaboratoareR/Laboratorul_6.R",
+    "project_path" : "Laboratorul_6.R",
+    "properties" : {
+        "cursorPosition" : "299,30",
+        "scrollLine" : "285",
+        "tempName" : "Untitled1"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
