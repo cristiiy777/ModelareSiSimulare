@@ -18,15 +18,15 @@
 
 #Exercitiul 1
 
-#Acest exercițiu folosește date epidemiologice. Vicente et al. (2006) a analizat datele din
-#observații ale mistreților și cerbului din mai multe paduri din Spania. Setul de date conține
-#informații despre tuberculoză (Tb) la ambele specii și parazitul Elaphostrongylus cervi,
-#care infectează doar căprioarele. În Zuur și colab. (2009), Tb a fost modelat în funcție de
-#continuu variabilă explicativă, lungimea animalului, notată cu lungimea CT (CT este un an
-#prezentate ca un vector de zerouri și cele reprezentând absența sau prezența Tb și larve E. cervi.                                                                           prescurtarea de cabeza-tronco, care este spaniolă pentru cap-corp). Tb și Ecervi sunt
+#Acest exercițiu folosește date epidemiologice. Vicente et al. (2006) a analizat datele din observații ale 
+#mistreților și cerbului din mai multe paduri din Spania. Setul de date conține informații despre 
+#tuberculoză (Tb) la ambele specii și parazitul Elaphostrongylus cervi, care infectează doar căprioarele. #În Zuur și colab. (2009), Tb a fost modelat în funcție de continuu variabilă explicativă, lungimea 
+#animalului, notată cu lungimea CT (CT este un an prescurtarea de cabeza-tronco, care este spaniolă 
+#pentru cap-corp). Tb și Ecervi sunt prezentate ca un vector de zerouri și cele reprezentând absența sau 
+#prezența Tb și larve E. cervi.                                                             
 
 #a) Utilizând funcția c, creați o variabilă care conține valorile lungimii celor șapte animale. 
-#   De asemenea, creați o variabilă care conține valorile Tb. Includeți valorile NA.
+#De asemenea, creați o variabilă care conține valorile Tb. Includeți valorile NA.
 
 
 directory  <- "C:/Users/Lenovo/Desktop/ModelareSiSimulare"
@@ -44,17 +44,17 @@ tb <- c(head(deer, 7)$Tb) #Tb-u primelor 7
 as.vector(head(deer, 7)$Tb) #ca vector
 is.vector(head(deer, 7)$Tb) #este vector?
 
-#c) Care este lungimea medie a celor șapte animale? Indicatie. Folositi functia mean().
+#c) Care este lungimea medie a celor Èapte animale? Indicatie. Folositi functia mean().
 
 lungime <- c(head(deer, 7)$LCT)
-
 medieLungime <- mean(lungime)
+medieLungime
 
 #Exercitiul 2. (functia cbind)
 
-#Continuăm cu aceleasi date din exercițiul 1. Creăm mai întâi variabile Farm și Month 
-#Rețineți că Farm este un șir de de caractere. Utilizați comanda cbind pentru a combina
-#datele din coloanele Month, LCT și Tb, și stocați rezultatele în variabila Boar.
+#Continuăm cu aceleasi date din exercițiul 1. Creăm mai întâi variabile Farm și Month .
+#Rețineți că Farm este un șir de de caractere. Utilizați comanda cbind pentru a combina datele 
+#din coloanele Month, LCT și Tb, și stocați rezultatele în variabila Boar.
 
 Farm  <- head(deer, 7)$Farm
 Month <- head(deer, 7)$Month
@@ -62,12 +62,16 @@ Tb    <- head(deer, 7)$Tb
 LCT   <- head(deer, 7)$LCT
 
 Boar  <- cbind(Month, LCT, Tb)
+Boar
 
 #Exercitiul 3. (matrice)
 
-#Creați următoarea matrice în R și determinați transpunerea ei, inversa ei și inmultiti D 
-#cu inversul său (rezultatul ar trebui să fie matricea identitate).
-#Indicatii. Folositi functiile matrix, det (pentru a calcula determinantul), solve (pentru a calcula inversa).
+#Creați următoarea matrice în R și determinați transpunerea ei, inversa ei și inmultiti D cu 
+#inversul său (rezultatul ar trebui să fie matricea identitate).
+
+   #1 2 3
+#D= 4 2 1
+   #2 3 0
 
 D <- matrix(c(1, 2, 3, 4, 2, 1, 2, 3, 0), ncol = 3, nrow = 3, byrow = TRUE)
 
@@ -93,12 +97,12 @@ list(Tb, LCT) #list
 
 #Exercitiul 5
 
-#Să presupunem că urmăriți timpurile petrecut in autobuz timp de două săptămâni (10 zile)
-#și găsiți următoarele durate în minute
+#Să presupunem că urmăriți timpurile petrecut in autobuz timp de două săptămâni (10 zile) și 
+#găsiți următoarele durate în minute
 #17 16 20 24 22 15 21 15 17 22
+#a) Introduceți aceste date în R. Folosiți funcția max pentru a găsi cea mai lunga durata, funcția 
+#mean pentru a găsi media, iar funcția min pentru a găsi minimul.
 
-#a) Introduceți aceste date în R. Folosiți funcția max pentru a găsi cea mai lunga durata,
-#   funcția mean pentru a găsi media, iar funcția min pentru a găsi minimul.
 
 listaMinute = list(17, 16, 20, 24, 22, 15, 21, 15, 17, 22)
 
@@ -106,8 +110,8 @@ max(unlist(listaMinute))
 min(unlist(listaMinute))
 mean(unlist(listaMinute))
 
-#b) Ups, nr 24 a fost o greșeală. Ar fi trebuit să fie 18. Cum puteți rezolva asta? Faceți acest
-#   lucru și apoi găsiți noua medie.
+#b) Ups, nr 24 a fost o greÈealÄ. Ar fi trebuit sÄ fie 18. Cum puteÈi rezolva asta? FaceÈi acest
+#   lucru Èi apoi gÄsiÈi noua medie.
 
 listaMinute[[which(24 == listaMinute)]] <- 18 #18 pus pe indexul elementului 24 gasit cu which
 mean(unlist(listaMinute))
@@ -121,27 +125,27 @@ sum(naveta>20)
 procent <- (sum(naveta<17)/length(naveta)) * 100
 
 #Exercitiul 6
-#Factura telefonului mobil variază de la lună la lună. Să presupunem că aveti următoarele sume lunare
+#Factura telefonului mobil variazÄ de la lunÄ la lunÄ. SÄ presupunem cÄ aveti urmÄtoarele sume lunare
 #46 33 39 37 46 30 48 32 49 35 30 48
-#Introduceți aceste date într-o variabilă numită factură.
-#Folosiți comanda sum pentru a afla suma cheltuită în acest an cu telefonul mobil.
-#Care este cea mai mică sumă cheltuită într-o lună? Care este cea mai mare?
+#IntroduceÈi aceste date Ã®ntr-o variabilÄ numitÄ facturÄ.
+#FolosiÈi comanda sum pentru a afla suma cheltuitÄ Ã®n acest an cu telefonul mobil.
+#Care este cea mai micÄ sumÄ cheltuitÄ Ã®ntr-o lunÄ? Care este cea mai mare?
 #In cate luni suma era mai mare de 40 $? Ce procent a fost acesta? 
 
 factura <- c(46, 33, 39, 37, 46, 30, 48, 32, 49, 35, 30, 48)
-
+factura
 min(factura)
 max(factura)
 sum(factura>40)
 procent <- (sum(factura>40)/length(factura)) * 100
-
+procent
 #Exercitiul 7
 #Fie vectorul x de mai jos
 
 x <- c(1, 8, 2, 6, 3, 8, 5, 5, 5, 5)
 
 #Folosind R, calculati: (obs. X1 reprezinta primul element al lui X) 
-#1. (X1 + X2 + · · · + X10 )/10 (folositi sum)
+#1. (X1 + X2 + Â· Â· Â· + X10 )/10 (folositi sum)
 
 sum(x)/10
 
@@ -153,7 +157,7 @@ for (i in x) {
   
 }
 
-#3. Find (Xi − 4.4)/2.875 for each i.
+#3. Find (Xi â 4.4)/2.875 for each i.
 
 for (i in x) {
   print((i - 4.4)/2.875)

@@ -131,7 +131,8 @@ IQR(waiting)
 
 #11. Trasati graficul de tip box-plot  pentru fiecare variabila din setul de date faithful.
 
-
+boxplot(faithful$eruptions)
+boxplot(faithful$waiting)
 
 #12. Calculati coeficientul de corelatie dintre variabilele din setul faithful.
 
@@ -149,6 +150,8 @@ directory     <- "C:/Users/Lenovo/Desktop/ModelareSiSimulare"
 fisierTitanic <- file.path(directory, "trainTitanic.csv")
 
 titanic       <- read.csv(file = fisierTitanic, header = TRUE)
+
+head(titanic)
 
 #T1. Trasati grafic distributia pe clase a pasagerilor (atributul PClass)
 

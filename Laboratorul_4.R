@@ -194,7 +194,6 @@ suma_castigata
 #   Folosind rnorm, simulați înălțimea a 100 de persoane și salvați datele într-un obiect numit înălțimi.
 
 inaltimi <- rnorm(n = 100, mean = 1.70, sd = 0.1)
-inaltimi
 
 #b) Pentru a vă face o idee despre valorile înălțimii, utilizați functia summary.
 
