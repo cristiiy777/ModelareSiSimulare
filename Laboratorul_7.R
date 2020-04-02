@@ -187,9 +187,44 @@ detach(stackloss)    # clean up
 #The 95% confidence interval of the stack loss with the given parameters is between 16.466 and 32.697.
 
 
+#__Setul 2
 
 
+#Construiti modelul liniar pentru setul de date din fisierul atasat pe site,
+#pentru a explica variabila cant-vanduta in functie de pret, venit_loc, pop, PIB.
 
+#cant-vanduta = Y
+#pret = X1
+#venit_loc = X2
+#pop = X3
+#PIB = X4
+
+directory            <- "C:/Users/Lenovo/Desktop/ModelareSiSimulare"
+fisier               <- file.path(directory, "Model liniar multiplu.csv")
+modelLiniarMultiplu  <- read.csv(file = fisier, header = TRUE)
+modelLiniarMultiplu
+
+scatter.smooth(modelLiniarMultiplu)
+
+cantitate_vanduta <- modelLiniarMultiplu$cantitate_vanduta
+pret              <- modelLiniarMultiplu$pret
+venit_loc         <- modelLiniarMultiplu$venit_loc
+pop               <- modelLiniarMultiplu$pop
+PIB               <- modelLiniarMultiplu$PIB
+
+modelLiniarMultiplu_lm = lm(cantitate_vanduta ~ pret + venit_loc + pop + PIB)
+
+summary(modelLiniarMultiplu_lm) 
+
+predict(modelLiniarMultiplu_lm)
+
+summary(modelLiniarMultiplu_lm)$r.squared      #coeficient de determinare
+
+summary(modelLiniarMultiplu_lm)$adj.r.squared  #coeficient de determinare ajustat
+
+predict(modelLiniarMultiplu_lm, interval="confidence") #interval de confidenta
+
+predict(modelLiniarMultiplu_lm, interval="predict") #interval de predictie
 
 
 
