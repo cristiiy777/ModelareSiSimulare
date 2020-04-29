@@ -131,17 +131,14 @@ summary(stackloss.lm)
 
 
 attach(stackloss)    # attach the data frame 
-stackloss.lm = lm(stack.loss ~ 
-                      +     Air.Flow + Water.Temp + Acid.Conc.)
+stackloss.lm = lm(stack.loss ~ Air.Flow + Water.Temp + Acid.Conc.)
 
 
 
 #Then we wrap the parameters inside a new data frame variable newdata.
 
 
-newdata = data.frame(Air.Flow=72, 
-                       +     Water.Temp=20, 
-                       +     Acid.Conc.=85)
+newdata = data.frame(Air.Flow=72, Water.Temp=20, Acid.Conc.=85)
 
 #We now apply the predict function and set the predictor variable in the newdata argument. We also set the interval
 #type as "confidence", and use the default 0.95 confidence level.
