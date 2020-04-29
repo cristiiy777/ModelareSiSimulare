@@ -540,6 +540,13 @@ b <- factor(train$type)
 fit <- glm(b ~ bmi+ age ,data=train,family=binomial())
 summary(fit)
 
+train$age_cat <- ifelse(train$age < 21, "<21", ifelse((train$age>=21) & (train$age<=25), "21-25",  ifelse((train$age>25) & (train$age<=30), "25-30",ifelse((train$age>30) & (train$age<=35), "30-35",ifelse((train$age>35) & (train$age<=40), "35-40",ifelse((train$age>40) & (train$age<=50), "40-50",ifelse((train$age>50) & (train$age<=60), "50-60",">60")))))))
+
+train$age_cat <- factor(train$age_cat, levels = c('<21','21-25','25-30','30-35','35-40','40-50','50-60','>60'))
+table(train$age)
+
+#https://www.kaggle.com/ksp585/pima-indian-diabetes-logistic-regression-with-r
+#ceva interesant
 
 ## MORTII LOR DE LABORATOARE CA NU NE ARATI NIMIC DA NE PUI SA DAM COPY PASTE FARA SA EXPLICI SAU SA DAI EXEMPLE...CUM PULA MEA SA STIU SA FAC CEVA CE N-AM LUCRAT NICIODATA? CUM POATE UN OM SA TAIE UN COPAC DACA NU-I ATRATI CUM ????
 
