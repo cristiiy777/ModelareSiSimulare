@@ -15,6 +15,8 @@ names(dataset)
 head(dataset)
 summary(head(dataset))
 
+
+
 ##Putem vizualiza variabilele. De exemplu sa vizualizam venitul primelor 6 state americane printr-un bar plot
 
 ##Rezumatul Income
@@ -59,6 +61,87 @@ pie(slices, labels = lbls, main="Pie Chart al crimelor")
 ##Se pare ca statul cu cea mai mare criminalitate dintre acestea sase este Alabama, statul cu cel mai mic venit pe cap de locuitor;
 ##Totusi este urmat de Alaska, statul cu cel mai mare venit pe cap de locuitor;
 
+############################################PANA AICI E PUS IN WORD########################################################
+
+##Relatia dintre variabile
+
+plot(dataset)
 
 
+##Ne uitam la corelatia dintre variabile a datasetului
+cor(dataset)
+
+
+##Incepem sa facem modelul de regresie multipla. 
+##Vom construi un model pentru Crime ca o functie pentru Income si Illiteracy, pentru a vedea cat influenteaza 
+##analfabetismul si veniturile unui stat american nivelul de crime.
+
+
+##Estimated Multiple Regression Equation
+
+
+state.lm = lm(Murder ~ Income + Illiteracy, data =  dataset)
+
+summary(state.lm)
+
+newdata = data.frame(Murder=25 , Income = 4000, Illiteracy = 10)
+
+predict(state.lm, newdata) 
+
+##Bazandu-ne pe modelul de regresie liniar multiplu si pe parametrii dati, crima preconizata este de 46.95142 
+
+
+
+
+
+##Multiple Coefficient of Determination
+
+state.lm = lm(Murder ~ Income + Illiteracy, data =  dataset)
+
+##Scoatem coeficientul de determinare din atributul r.squared din sumarul său
+
+summary(state.lm)$r.squared 
+
+##Coeficientul de determinare al modelului de regresie multipla pentru setul nostru de date este 0.5015367
+
+
+
+
+
+##Adjusted Coefficient of Determination
+
+##Scoatem coeficientul de determinare ajustat din atributul r.squared din sumarul său
+
+summary(state.lm)$adj.r.squared 
+
+##Coeficientul de determinare ajustat al modelului de regresie multipla pentru setul nostru de date este 0.4803255
+
+
+
+
+
+##Significance Test for MLR
+
+##Decidem care dinre variabilele independente in modelul de regresie liniara multiplu al setului nostru de date sunt
+##semnificative din punct de vedere statistic
+
+#Variabila t a variabilelor independente poate fi gasita in sumar
+
+summary(state.lm)
+
+##Cum p-valorile pentru  Income si Illiteracy sunt mai mici de 0.05 ambele sunt semnificative din punct de vedere statistic in setul nostru de date
+
+
+
+
+##Confidence Interval for MLR
+
+##Vom aplica functia predict si setam variabila predictor in argumentul variabilei newdata.
+##Si vom seta intervalul type precum "confidenta" si vom folosi defalt-ul de 0.95 nivel de confidenta
+
+predict(state.lm, newdata, interval="confidence") 
+
+##Intervalul de 95% confidenta al datasetului cu parametrii dati este intre 34.86093 si 59.04192
+
+##Plotarea rezultatelor
 
